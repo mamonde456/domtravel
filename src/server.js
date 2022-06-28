@@ -1,10 +1,11 @@
+import "./db"
 import express from "express";
 import morgan from "morgan";
 import rootRouter from "./routers/rootRouter";
 import userRouter from "./routers/userRouter";
 import travelRouter from "./routers/travelRouter";
 
-const PORT = 4000;
+const PORT = 5000;
 
 const app = express();
 const logger = morgan("dev");
@@ -17,6 +18,6 @@ app.use("/users", userRouter);
 app.use("/travels", travelRouter);
 
 const handleListening = () =>
-  console.log(`Server listenting on port http://localhost:${PORT} 🚀`);
+  console.log(`✅ Server listenting on port http://localhost:${PORT} 🚀`);
 
 app.listen(PORT, handleListening);
